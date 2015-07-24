@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>location.href + location.replace </title>
+</head>
+<body>
+<script>
+
+if(location.hash) { vulfunction(); }
+function vulfunction()
+{
+	var url = location.href.split("#!")[1];
+	if(url)
+	{
+		location.replace(url);
+		
+	}
+}
+
+</script>
+
+</body>
+</html>
