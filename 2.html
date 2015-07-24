@@ -1,22 +1,20 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
- <HEAD>
-  <TITLE> location.hash - Eval </TITLE>
- 
-  <META NAME="Author" CONTENT="sagarp">
- 
- </HEAD>
-
- <BODY>
+<html>
+<head></head>
+<body>
 <script>
-	var input = location.hash.substr(1);
-	eval(input);
+document.body.onload = xss;
+function xss()
+{
+	link = location.hash.slice(1);
+	var a = document.createElement('a');
+	var linkText = document.createTextNode("Link");
+	a.appendChild(linkText);
+	a.title = "XSS Test";
+	a.href = link;
+	test = document.getElementById("test");
+	test.appendChild(a);
+}
 </script>
-<center>
-<h3>
-	Eval base DOM XSS 
-	
-</h3>
-</center>
-
- </BODY>
+<div id = "test"></div>
+</body>
+</html>
