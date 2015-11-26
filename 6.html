@@ -4,17 +4,19 @@
 <meta charset="utf-8">
 <title>SetTimeout</title>
 </head>
-
 <body>
 
-<script>
-var data = location.href.split("#!page=")[1];
-if(data)
-{
-	setTimeout(function() { document.write("You have been inactive at " +data+ " since 2 seconds"); },2000);
-}
+<p id="p2">Your current country is <span id="test">India</span> and Your current date is <script>document.write(Date())</script></p>
+
+<script>       
+
+var payload = location.href.split("#")[1];
+var country = '"'+payload+'"';
+setTimeout('document.getElementById("test").innerHTML='+country, 1000);
 
 </script>
 
 </body>
+
 </html>
+
