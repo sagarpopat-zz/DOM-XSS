@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>location.pathname</title>
+</head>
+
+<body>
+
+<p id="p2"></p>
+
+<script>
+var payload = location.pathname;
+if(payload == "/index.html")
+{
+	document.write("You are at wrong place");
+}
+else
+{
+	document.getElementById('p2').innerHTML = "You are currently at "+payload;
+}
+</script>
+
+</body>
