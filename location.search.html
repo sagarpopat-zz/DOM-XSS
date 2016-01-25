@@ -7,16 +7,19 @@
 
 <body>
 <script>
+
 var a = location.search;
 if(a.indexOf("email") > -1) 
 {
-	document.write("Your email address is " +a.slice(a.indexOf("=")+1));
+	document.write("Your email address is " +decodeURI(a.slice(a.indexOf("=")+1)));
+	//Modern browser encodes output of location.search so it would only be vulnerable if JS sink is decoding input. Example sink : eval 
+	
 }
 else
 {
 	alert("Invalid Parameter");
 }
-</script>
 
+</script>
 </body>
 </html>
