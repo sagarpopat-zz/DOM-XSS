@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jquery .attr event</title>
+</head>
+
+<body>
+<input type="text" id="username">
+<form id="login_form" method="GET"> 
+<input type="submit" name="xss">
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+$(function() { 
+    $('#username').focus();
+    var a = location.hash.slice(1);
+    $("#login_form").attr('action', a);
+  });
+
+</script>
+</body>
+</html>
